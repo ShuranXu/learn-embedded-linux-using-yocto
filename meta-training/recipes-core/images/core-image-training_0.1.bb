@@ -5,7 +5,9 @@ IMAGE_INSTALL = "packagegroup-core-boot \
                 helloworld \
                 hello \
                 helloworld-cmake \
-                helloworld-make"
+                helloworld-make \
+                test-libtraining-static \
+                test-libtraining-dyn"
 
 IMAGE_LINGUAS = ''
 
