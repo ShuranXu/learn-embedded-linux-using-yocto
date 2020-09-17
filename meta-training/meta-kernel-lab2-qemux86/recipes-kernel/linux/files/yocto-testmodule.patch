@@ -1,0 +1,68 @@
+Index: kernel-source/drivers/misc/Kconfig
+===================================================================
+--- kernel-source.orig/drivers/misc/Kconfig
++++ kernel-source/drivers/misc/Kconfig
+@@ -525,6 +525,11 @@ config VEXPRESS_SYSCFG
+ 	  bus. System Configuration interface is one of the possible means
+ 	  of generating transactions on this bus.
+ 
++config YOCTO_TESTMODULE
++	tristate "Yocto Training Test Driver"
++	help
++	  This driver provides simple message for testing Yocto kernel
++
+ source "drivers/misc/c2port/Kconfig"
+ source "drivers/misc/eeprom/Kconfig"
+ source "drivers/misc/cb710/Kconfig"
+Index: kernel-source/drivers/misc/Makefile
+===================================================================
+--- kernel-source.orig/drivers/misc/Makefile
++++ kernel-source/drivers/misc/Makefile
+@@ -56,3 +56,4 @@ obj-$(CONFIG_GENWQE)		+= genwqe/
+ obj-$(CONFIG_ECHO)		+= echo/
+ obj-$(CONFIG_VEXPRESS_SYSCFG)	+= vexpress-syscfg.o
+ obj-$(CONFIG_CXL_BASE)		+= cxl/
++obj-$(CONFIG_YOCTO_TESTMODULE)  += yocto-testmodule.o
+Index: kernel-source/drivers/misc/yocto-testmodule.c
+===================================================================
+--- /dev/null
++++ kernel-source/drivers/misc/yocto-testmodule.c
+@@ -0,0 +1,38 @@
++/*
++ * Copyright 2019 Embedded Labs 
++ * Authored-by:  Sonu Abraham <sonuabraham2001@gmail.com>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License along
++ * with this program; if not, write to the Free Software Foundation, Inc.,
++ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++ */
++
++#include <linux/module.h>
++
++static int __init yocto_testmodule_init(void)
++{
++	printk("enter test module!\n");
++
++	return 0;
++}
++
++static void __exit yocto_testmodule_exit(void)
++{
++	printk("exit test module!\n");
++}
++
++module_init(yocto_testmodule_init);
++module_exit(yocto_testmodule_exit);
++
++MODULE_AUTHOR("Sonu Abraham <sonuabraham2001@gmail.com");
++MODULE_DESCRIPTION("Yocto Training Test Driver");
++MODULE_LICENSE("GPL");
