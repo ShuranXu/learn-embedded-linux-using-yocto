@@ -63,6 +63,6 @@ Index: kernel-source/drivers/misc/yocto-testmodule.c
 +module_init(yocto_testmodule_init);
 +module_exit(yocto_testmodule_exit);
 +
-+MODULE_AUTHOR("Sonu Abraham <sonuabraham2001@gmail.com");
++MODULE_AUTHOR("Shuran Xu <xushuran2012@gmail.com");
 +MODULE_DESCRIPTION("Yocto Training Test Driver");
 +MODULE_LICENSE("GPL");
