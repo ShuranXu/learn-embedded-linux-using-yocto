@@ -1,10 +1,10 @@
 # learn-embedded-linux-using-yocto
 
-## This course provides introductio to the following sections:
+This course provides introductio to the following sections:
 
-* Section 1: Bitbake Tool Usage
+* __Section 1: Bitbake Tool Usage__
 
-* Section 2: Application Development
+* __Section 2: Application Development__
     - Using Makefile
     - Using CMake
     - Using Autotools
@@ -23,7 +23,7 @@
         * Installation
         * Helloworld application development example
     
-* Section 3: Kernel Development
+* __Section 3: Kernel Development__
     - Working with traditional kernel recipe
     - Working with Linux-Yocto kernel recipe
         * configure options 
@@ -31,11 +31,11 @@
         * creating patches using `bitbake -c diffconfig virtual/kernel`
     - Working with custom kernel recipe
 
-* Section 4: BSP Development
+* __Section 4: BSP Development__
     * BSP layer introduction
     * Adding new BSP layer 
 
-* Section 5: Package Management
+* __Section 5: Package Management__
     * Package management introduction
     * Using OPKG package manager
         - opkg update
@@ -43,7 +43,7 @@
         - opkg install
         - opkg upgrade
     
-* Application Debug Using Eclipse IDE
+* __Section 6: Application Debug Using Eclipse IDE__
     - Configure local.conf
     - Setup of Eclipse IDE
 
